@@ -1,5 +1,5 @@
 python-vkontakte
-**************
+****************
 
 .. image:: https://badge.fury.io/py/python-vkontakte.svg
     :target: https://badge.fury.io/py/python-vkontakte
@@ -59,7 +59,6 @@ For obtaining access token, you can use ``pyvkontakte.auth`` method.
 which will return dict with keys access_token, expires_in, user_id. If login or password is invalid, ``pyvkontakte.InvalidCredentials`` will be raised.
 If some parsing error occurs, ``pyvkontakte.ParsingError`` will be raised.
 Both ``pyvkontakte.InvalidCredentials`` and ``pyvkontakte.ParsingError`` are subclasses of ``pyvkontakte.VkontakteAuthError``.
-
 
 There is also a logger ``pyvkontakte`` (``pyvkontakte.auth`` and ``pyvkontakte.api``) enabled.
 ``pyvkontakte.api`` logs an INFO every request made with request params, and DEBUG with json of response
