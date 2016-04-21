@@ -22,7 +22,7 @@ class VkontakteApi(object):
 
         :rtype: VkontakteApi
         """
-        data = auth(login, password, client_id, scope)
+        data = auth.auth(login, password, client_id, scope)
         return cls(data['access_token'])
 
 
