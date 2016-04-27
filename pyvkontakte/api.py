@@ -54,11 +54,28 @@ class VkontakteApi(object):
         """
         params = self._params_encode(**kwargs)
         url = self.base_url + method
-        logger.info('Api call: %s %s', method, params)
-        response = requests.get(url, params=params)
+        return self._make_request(url, params=params)
+
+    def _make_request(self, url, **kwargs):
+        """
+        :rtype: dict
+        """
+        logger.info('Api call: %s %s', url, str(kwargs))
+        try:
+            response = requests.get(url, **kwargs)
+        except:
+            logger.exception('Exception while calling api: %s %s', url, str(kwargs))
+            raise 
+        logger.debug('Api response: %s', response.text)
+        return self._handle_response(response)
+
+    def _handle_response(self, response):
+        """
+        :param requests.Response response:
+        :rtype: dict
+        """
         response.raise_for_status()
         json = response.json()
-        logger.debug('Api response: %s', json)
         if 'error' in json:
             raise VkontakteApiError(json)
         return json['response']
