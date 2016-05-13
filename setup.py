@@ -7,7 +7,7 @@ with open('README.rst') as readme:
 setup(
     install_requires=['requests', 'beautifulsoup4'],
     name='python-vkontakte',
-    version='1.1.1',
+    version='1.1.2',
     packages=['pyvkontakte'],
     url='https://github.com/sashgorokhov/python-vkontakte',
     download_url='https://github.com/sashgorokhov/python-vkontakte/archive/master.zip',
