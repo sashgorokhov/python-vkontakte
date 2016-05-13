@@ -5,7 +5,7 @@ with open('README.rst') as readme:
         long_description = readme.read() + '\n\n' + history.read()
 
 setup(
-    requires=['requests', 'beautifulsoup4'],
+    install_requires=['requests', 'beautifulsoup4'],
     name='python-vkontakte',
     version='1.1.1',
     packages=['pyvkontakte'],
