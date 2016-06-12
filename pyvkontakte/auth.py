@@ -30,7 +30,7 @@ def _build_login_url(client_id, scope):
         'redirect_uri': 'http://oauth.vk.com/blank.html',
         'response_type': 'token',
         'client_id': client_id,
-        'scope': scope,
+        'scope': scope
     }
     prepared_request = requests.PreparedRequest()
     prepared_request.prepare('GET', url=base_url, params=query)
